@@ -42,12 +42,12 @@ wget -q --show-progress https://github.com/olegos2/termux-box/releases/download/
 echo ""
 echo "Unzipping Rootfs"
 tar -xf rootfs.tar.xz
-rm -rf rootfs.tar.xz
+mv rootfs.tar.xz /sdcard/Download
 
 cd $HOME/termux-box/ubuntu-fs/opt
 wget https://github.com/olegos2/termux-box/raw/main/scripts.tar.gz &>/dev/null
 tar -xf scripts.tar.gz
-rm -rf scripts.tar.gz
+mv scripts.tar.gz /sdcard
 
 cd $HOME/termux-box/
 wget -N https://github.com/olegos2/termux-box/raw/main/termux-box &>/dev/null
