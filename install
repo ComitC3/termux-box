@@ -20,19 +20,14 @@ pkg upgrade -y
 sleep 2
 echo ""
 echo "Installing packages"
-pkg install x11-repo -y &>/dev/null
-pkg install pulseaudio -y &>/dev/null
-pkg install xwayland -y &>/dev/null
-pkg install proot -y &>/dev/null
-pkg install wget -y &>/dev/null
-pkg install tsu -y &>/dev/null
-pkg install root-repo -y &>/dev/null
+pkg install x11-repo pulseaudio xwayland wget proot tsu root-repo -y &>/dev/null
+
 rm -rf $HOME/termux-box
 mkdir -p $HOME/termux-box
 cd $HOME/termux-box
 wget https://github.com/olegos2/termux-box/raw/main/termux-x11-1.02.07-0-all.deb &>/dev/null
 dpkg -i termux-x11-1.02.07-0-all.deb &>/dev/null
-rm -rf termux-x11-1.02.07-0-all.deb
+mv termux-x11-1.02.07-0-all.deb /sdcard/Download
 
 echo ""
 echo "Downloading preconfigured Rootfs..."
